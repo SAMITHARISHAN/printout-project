@@ -1,0 +1,86 @@
+<div class="row">
+
+  <div class="col-sm-10 offset-md-2">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>
+          <strong>Enter username and password to sign in</strong>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+
+          <div class="col-sm-12">
+            <form [formGroup]="userLoginForm">
+              <!-- <div>
+                <div>
+                  <mat-form-field>
+                    <input matInput formControlName="userID" placeholder="Enter your user Name*" autocomplete="off">
+                  </mat-form-field>
+                  <mat-error *ngIf="userLoginForm.get('userID').touched && userLoginForm.get('userID').errors?.required">
+                    Username is required !
+                  </mat-error>
+                </div>
+
+                <div>
+                  <mat-form-field>
+                    <input matInput formControlName="password" placeholder="Enter your password" [type]="showPassword ? 'password' : 'text'"
+                      autocomplete="off">
+                    <mat-icon matSuffix (click)="showPassword = !showPassword">{{showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </mat-form-field>
+                  <mat-error *ngIf="userLoginForm.get('password').touched && userLoginForm.get('password').errors?.required">
+                    Password is required !
+                  </mat-error>
+                </div>
+              </div>
+              <mat-checkbox [checked]="checked" (change)="rememberMe($event); false"> Remember me</mat-checkbox><br>
+              <div class="row">
+                <div class="col">
+                  <button id="loginBtn" mat-raised-button color="primary" type="submit" [disabled]="userLoginForm.invalid || something" (click)="toggle()"> <mat-spinner *ngIf="spinnerShow" id="toggle" [diameter]="28" style="float:left;"></mat-spinner>&nbsp;Login</button>
+                </div>
+                <div class="col">
+                  <mat-spinner *ngIf="spinnerShow" id="toggle" [diameter]="30"></mat-spinner>
+                </div>
+                <div class="col">
+                  <button type="button" class="btn btn-danger">Login</button>
+                </div>
+              </div> -->
+           
+              <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" formControlName="userID" class="form-control"/>
+                  <mat-error *ngIf="userLoginForm.get('userID').touched && userLoginForm.get('userID').errors?.required">
+                      Username is required !
+                    </mat-error>
+              </div>
+           
+
+             
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" formControlName="password" class="form-control" />
+                  <mat-error *ngIf="userLoginForm.get('password').touched && userLoginForm.get('userID').errors?.required">
+                      Password is required !
+                    </mat-error>
+              </div>
+            
+              <!-- <mat-checkbox [checked]="checked" (change)="rememberMe($event); false"> Remember me</mat-checkbox><br> -->
+            </form>
+          </div>
+
+        </div>
+      </mat-card-content>
+      <div class="row">
+          <div class="col">
+            <!-- <button id="loginBtn" type="button" class="btn btn-primary" type="submit" [disabled]="userLoginForm.invalid || something" (click)="toggle()">Login</button> -->
+          </div>
+          <div class="col">
+            <!-- <mat-spinner *ngIf="spinnerShow" id="toggle" [diameter]="30"></mat-spinner> -->
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-primary">Reset</button>
+          </div>
+        </div>
+    </mat-card>
+  </div>
+</div>
