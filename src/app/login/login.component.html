@@ -66,12 +66,12 @@
                 </mat-error> -->
               </div>
 
-              <!-- <mat-checkbox [checked]="checked" (change)="rememberMe($event); false"> Remember me</mat-checkbox><br> -->
+              <mat-checkbox [checked]="checked" (change)="rememberMe($event); false"> Remember me</mat-checkbox><br>
 
             </mat-card-content>
             <div class="row">
               <div class="col">
-                <button id="loginBtn" type="button" class="btn btn-primary" type="submit" [disabled]="userLoginForm.invalid || something">Login</button>
+                <button id="loginBtn" type="button" class="btn btn-primary" type="submit" (click)="onSubmit()">Login</button>
               </div>
               <div class="col">
                 <!-- <mat-spinner *ngIf="spinnerShow" id="toggle" [diameter]="30"></mat-spinner> -->
@@ -117,24 +117,16 @@
       <div class="row">
       
         <div class="col-sm-12">
-          <form [formGroup]="userRegisterForm">
+          <form [formGroup]="userRegisterForm" (ngSubmit)="onRegSubmit()">
             <mat-card-content>
 
                 <div class="form-group">
                     <!-- <label for="password">Password</label> -->
-                    <input type="text" formControlName="firstName" class="form-control" placeholder="First name"/>
+                    <input type="text" formControlName="userName" class="form-control" placeholder="Username"/>
                     <!-- <mat-error *ngIf="userLoginForm.get('password').touched && userLoginForm.get('userID').errors?.required">
                       Password is required !
                     </mat-error> -->
                   </div>
-
-                  <div class="form-group">
-                      <!-- <label for="password">Password</label> -->
-                      <input type="text" formControlName="lastName" class="form-control" placeholder="Last name"/>
-                      <!-- <mat-error *ngIf="userLoginForm.get('password').touched && userLoginForm.get('userID').errors?.required">
-                        Password is required !
-                      </mat-error> -->
-                    </div>
 
                     <div class="form-group">
                         <!-- <label for="password">Password</label> -->
@@ -144,14 +136,31 @@
                         </mat-error> -->
                       </div>
 
+                      <div class="form-group">
+                        <!-- <label for="password">Password</label> -->
+                        <input type="password" formControlName="regpassword" class="form-control" placeholder="Password"/>
+                        <!-- <mat-error *ngIf="userLoginForm.get('password').touched && userLoginForm.get('userID').errors?.required">
+                          Password is required !
+                        </mat-error> -->
+                      </div>
+
+                      <div class="form-group">
+                        <!-- <label for="password">Password</label> -->
+                        <input type="password" formControlName="confirmpassword" class="form-control" placeholder="Confirm Password"/>
+                        <!-- <mat-error *ngIf="userLoginForm.get('password').touched && userLoginForm.get('userID').errors?.required">
+                          Password is required !
+                        </mat-error> -->
+                      </div>
+
             </mat-card-content>
 
             <div class="row">
-                <div class="col-sm-12">
-                  <button type="button" class="btn btn-primary" type="submit">Register</button>
-                </div>
-            </div>
+              <div class="col-sm-12">
+                <button type="button" class="btn btn-primary">Register</button>
+              </div>
+          </div>
           </form>
+          
         </div>
       </div>
 
